@@ -1,0 +1,23 @@
+Step 1: Initiate the Django project
+
+Step 2: Get Razorpay Keys --
+
+addign details under settings.py file 
+
+RAZOR_KEY_ID = YOUR_KEY_ID
+RAZOR_KEY_SECRET = YOUR_KEY_SECRET 
+
+Step 3: Views.py
+This is the main step of the process. First, we need to understand how payment works in Razorpay.
+Create a Razor Order from our Django Server.
+Pass Order Id and Other Options to the Frontend.
+The user clicks the payment button and pays with one of the payment methods.
+Razorpay handles Payment Success and Failure.
+On Failure, Razorpay facilitates retry of the payments.
+On Success, Razorpay makes a post request to a callback URL on our server.
+Verify the payment signature, to confirm that payment is authentic and isn’t tampered with.
+Once verified, capture the payment and render the success page.
+
+Now map the above views to the urls in the urls.py.
+
+Step 4: Frontend
